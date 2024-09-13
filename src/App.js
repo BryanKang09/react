@@ -1,24 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import Bb from './component/box' // upper, lower
+import { useState } from 'react';
 
 function App() {
+  let counter = 0;
+  const increase = ()=>{
+    // counter = counter+1;
+    setCounter2(counter2 + 1);
+  }
+  const [counter2, setCounter2] = useState(0);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>      
+      <Bb name="lisa" boxNo={1}/>
+      <Bb name="bryan" boxNo={2}/>
+      
+
+      <div>{counter}</div>
+      <div>state: {counter2}</div>
+      <button onClick ={increase}>click</button>
+    </>
   );
 }
 
